@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     CAFE QUY HOẠCH — WEBSITE CHÍNH THỨC
+     ------------------------------------------------------------
+     Cấu trúc dự án:
+       index.html      → trang này (nội dung hiển thị)
+       css/style.css   → toàn bộ màu sắc, phông chữ, bố cục
+       js/config.js    → SĐT, mã PIN, cấu hình (sửa ở đây)
+       js/tools.js     → 2 công cụ tính lãi vay & đền bù GPMB
+       js/gia-an.js    → chức năng AI Chat Gia An
+       js/report.js    → báo cáo tổng kết cuối ngày
+       images/logo.svg → logo thương hiệu (thay file để đổi logo)
+     Xem README.md để biết cách đưa lên GitHub và Netlify.
+     ============================================================ -->
+
+<title>Cafe Quy Hoạch — Tư vấn quy hoạch, pháp lý nhà đất, đền bù GPMB</title>
+<meta name="description" content="Cafe Quy Hoạch — check quy hoạch, tư vấn luật sư, công chứng sang tên sổ đỏ, kết nối mua bán, đền bù giải phóng mặt bằng, thiết kế xây dựng. Tư vấn miễn phí. Minh Bạch · Uy Tín · An Tâm.">
+<meta name="theme-color" content="#241A11">
+
+<!-- Biểu tượng trên tab trình duyệt -->
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
+<link rel="apple-touch-icon" href="images/logo.svg">
+
+<!-- Thẻ chia sẻ mạng xã hội -->
+<meta property="og:title" content="Cafe Quy Hoạch — Minh Bạch · Uy Tín · An Tâm">
+<meta property="og:description" content="Tư vấn quy hoạch, pháp lý nhà đất, đền bù giải phóng mặt bằng và thiết kế xây dựng. Miễn phí 100%.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/logo.svg">
+
+<!-- Phông chữ: Playfair Display (tiêu đề) + Montserrat (nội dung) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap&subset=vietnamese" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     THANH ĐIỀU HƯỚNG
+     ============================================================ -->
+<header>
+  <div class="header-inner">
+    <span class="badge"><img src="images/logo.svg" alt="Logo Cafe Quy Hoạch"></span>
+    <div class="brand">
+      <b>CAFE QUY HOẠCH</b>
+      <span class="gold-solid">Minh Bạch · Uy Tín · An Tâm</span>
+    </div>
+    <nav aria-label="Điều hướng chính">
+      <a href="#dich-vu">Dịch vụ</a>
+      <a href="#tinh-lai">Tính lãi vay</a>
+      <a href="#gpmb">Ước tính GPMB</a>
+      <a href="#gia-an">AI Chat</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================
+     KHỐI MỞ ĐẦU
+     ============================================================ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Tư vấn miễn phí 100%</span>
+      <h1>Đất đai, quy hoạch, đền bù —<br><span class="gold-text">minh bạch từng con số.</span></h1>
+      <p>Ngồi xuống với một ly cà phê, đứng dậy với câu trả lời rõ ràng. Từ kiểm tra quy hoạch, tư vấn luật sư, công chứng sang tên sổ đỏ, đến kết nối mua bán và thiết kế xây dựng — mỗi việc có một chuyên gia đứng sau. Website có sẵn <b>AI Chat Gia An</b> hỗ trợ bạn 24/7.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#gia-an">Hỏi ngay qua AI Chat</a>
+        <a class="btn btn-ghost" href="https://zalo.me/0962145185" target="_blank" rel="noopener">Zalo 0962 145 185</a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <span class="badge"><img src="images/logo.svg" alt="Logo Cafe Quy Hoạch"></span>
+      <div class="motto-line gold-text">MINH BẠCH · UY TÍN · AN TÂM</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DỊCH VỤ — 9 lĩnh vực
+     Muốn thêm/bớt dịch vụ: sao chép một khối .svc và sửa nội dung.
+     Nhớ sửa cả từ khóa tương ứng trong js/gia-an.js.
+     ============================================================ -->
+<section id="dich-vu" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="rule"></div>
+      <span class="tag gold-solid">Dịch vụ tại quán</span>
+      <h2>Trọn vẹn một hành trình nhà đất</h2>
+      <p>Từ lúc bạn còn đang cân nhắc đến khi cầm sổ đỏ đứng tên mình — mỗi bước đều có chuyên gia phụ trách riêng. AI Chat lắng nghe rồi phân luồng đến đúng người.</p>
+    </div>
+    <div class="services">
+
+      <div class="svc">
+        <span class="num gold-solid">01</span>
+        <h3>Check quy hoạch</h3>
+        <p>Tra cứu thửa đất có dính quy hoạch đường, cây xanh, dự án hay chỉ giới nào không. Xem đúng bản đồ quy hoạch được duyệt trước khi bạn đặt cọc — tránh mua phải đất "dính đỏ".</p>
+        <button onclick="openGiaAn('Tôi muốn kiểm tra xem thửa đất của tôi có dính quy hoạch không')">Hỏi ngay →</button>
+      </div>
+
+      <div class="svc">
+        <span class="num gold-solid">02</span>
+        <h3>Tư vấn Luật sư</h3>
+        <p>Luật sư đồng hành khi có tranh chấp đất đai, thừa kế, hợp đồng đặt cọc, khiếu nại quyết định thu hồi. Soạn đơn, đại diện làm việc với cơ quan nhà nước và tại tòa.</p>
+        <button onclick="openGiaAn('Tôi cần tư vấn luật sư về vấn đề đất đai')">Hỏi ngay →</button>
+      </div>
+
+      <div class="svc">
+        <span class="num gold-solid">03</span>
+        <h3>Công chứng · Sang tên sổ đỏ</h3>
+        <p>Hỗ trợ trọn gói hợp đồng công chứng mua bán, tặng cho, thừa kế; kê khai thuế, lệ phí trước bạ và sang tên tại Văn phòng đăng ký đất đai. Báo rõ chi phí, thời gian từng bước.</p>
+        <button onclick="openGiaAn('Tôi muốn công chứng và sang tên sổ đỏ')">Hỏi ngay →</button>
+      </div>
+
+      <div class="svc">
+        <span class="num gold-solid">04</span>
+        <h3>Kết nối mua bán</h3>
+        <p>Kết nối trực tiếp người mua và người bán trong mạng lưới của quán — nhà đất đã được kiểm tra quy hoạch, pháp lý rõ ràng. Thương lượng minh bạch, không thổi giá.</p>
+        <button onclick="openGiaAn('Tôi muốn được kết nối mua bán nhà đất')">Hỏi ngay →</button>
+      </div>
+
+      <div class="svc">
+        <span class="num gold-solid">05</span>
+        <h3>Đền bù GPMB</h3>
+        <p>Ước tính đền bù theo hệ số K, bảng giá đất, công trình trên đất, tái định cư &amp; tạm cư. Bám sát phương án được duyệt của từng dự án, không nói chung chung.</p>
+        <button onclick="openGiaAn('Nhà tôi nằm trong diện giải phóng mặt bằng, tôi muốn hỏi về tiền đền bù')">Hỏi ngay →</button>
+      </div>
+
+      <div class="svc">
+        <span class="num gold-solid">06</span>
+        <h3>Mua · Bán · Đầu tư BĐS</h3>
+        <p>Tư vấn theo vị trí, ngân sách và mục tiêu của bạn. Phân tích tiềm năng khu vực, định giá hợp lý, cảnh báo rủi ro trước khi xuống tiền.</p>
+        <button onclick="openGiaAn('Tôi muốn tư vấn mua bán bất động sản')">Hỏi ngay →</button>
+      </div>
+
+      <div class="svc">
+        <span class="num gold-solid">07</span>
+        <h3>Xin cấp phép xây dựng</h3>
+        <p>Hướng dẫn hồ sơ, quy trình xin phép, hoàn công vào sổ — tránh rủi ro không được bồi thường khi bị thu hồi đất và mất giá khi bán.</p>
+        <button onclick="openGiaAn('Tôi muốn xin cấp phép xây dựng')">Hỏi ngay →</button>
+      </div>
+
+      <div class="svc">
+        <span class="num gold-solid">08</span>
+        <h3>Thiết kế &amp; Sửa chữa nhà</h3>
+        <p>Thiết kế mới, cải tạo, nâng tầng theo ngân sách. Dự toán chi phí chi tiết, giới thiệu nhà thầu uy tín, giám sát chất lượng thi công.</p>
+        <button onclick="openGiaAn('Tôi muốn tư vấn thiết kế xây dựng, sửa chữa nhà')">Hỏi ngay →</button>
+      </div>
+
+      <div class="svc">
+        <span class="num gold-solid">09</span>
+        <h3>Tài chính &amp; Vay ngân hàng</h3>
+        <p>Đối chiếu lịch trả nợ, phát hiện sai lệch gốc – lãi, chọn phương án vay tối ưu cho việc mua nhà, xây nhà.</p>
+        <button onclick="openGiaAn('Tôi muốn tư vấn vay ngân hàng mua nhà')">Hỏi ngay →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CÔNG CỤ 01 — TÍNH LÃI VAY NGÂN HÀNG
+     Xử lý tính toán nằm trong js/tools.js → hàm calcLoan()
+     ============================================================ -->
+<section id="tinh-lai">
+  <div class="container">
+    <div class="section-head">
+      <div class="rule"></div>
+      <span class="tag gold-solid">Công cụ 01</span>
+      <h2>Tính lãi vay ngân hàng</h2>
+      <p>Bảng kê từng kỳ được cộng dồn trực tiếp, nên <b>Tổng gốc + Tổng lãi = Tổng thanh toán</b> chính xác đến từng đồng. Dùng để đối chiếu với lịch trả nợ ngân hàng gửi bạn.</p>
+    </div>
+    <div class="tool-card">
+      <div class="tool-grid">
+        <div>
+          <label for="loanAmount">Số tiền vay (VNĐ)</label>
+          <input type="number" id="loanAmount" value="2000000000" min="0" step="10000000">
+          <div class="hint" id="loanAmountWords">Hai tỷ đồng</div>
+        </div>
+        <div>
+          <label for="loanRate">Lãi suất (%/năm)</label>
+          <input type="number" id="loanRate" value="8.5" min="0" step="0.1">
+        </div>
+        <div>
+          <label for="loanTerm">Thời hạn vay (tháng)</label>
+          <input type="number" id="loanTerm" value="240" min="1" step="1">
+          <div class="hint">240 tháng = 20 năm</div>
+        </div>
+        <div>
+          <label for="loanMethod">Phương thức trả nợ</label>
+          <select id="loanMethod">
+            <option value="giamdan">Dư nợ giảm dần (gốc chia đều)</option>
+            <option value="deu">Trả đều hàng tháng (niên kim)</option>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" onclick="calcLoan()">Tính ngay</button>
+
+      <div id="loanResult" style="display:none">
+        <div class="result-box" style="margin-top:22px">
+          <div class="result-row"><span>Trả tháng đầu</span><span class="v" id="rFirst"></span></div>
+          <div class="result-row"><span>Trả tháng cuối</span><span class="v" id="rLast"></span></div>
+          <div class="result-row"><span>Tổng tiền gốc</span><span class="v" id="rPrincipal"></span></div>
+          <div class="result-row"><span>Tổng tiền lãi</span><span class="v" id="rInterest"></span></div>
+          <div class="result-row total"><span>Tổng thanh toán</span><span class="v" id="rTotal"></span></div>
+        </div>
+        <div class="check-ok" id="rCheck"></div>
+        <details class="sched">
+          <summary>Xem bảng kê trả nợ từng tháng</summary>
+          <div class="sched-wrap">
+            <table>
+              <thead><tr><th>Kỳ</th><th>Gốc trả</th><th>Lãi trả</th><th>Tổng kỳ</th><th>Dư nợ còn lại</th></tr></thead>
+              <tbody id="schedBody"></tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+
+      <p class="note">💡 Nếu bảng kê của ngân hàng có tổng gốc + tổng lãi <b>không khớp</b> tổng thanh toán, chụp lại và gửi Zalo <b>0962 145 185</b> — chuyên gia đối chiếu miễn phí.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CÔNG CỤ 02 — ƯỚC TÍNH ĐỀN BÙ GPMB
+     Xử lý tính toán nằm trong js/tools.js → hàm calcGPMB()
+     ============================================================ -->
+<section id="gpmb" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="rule"></div>
+      <span class="tag gold-solid">Công cụ 02</span>
+      <h2>Ước tính đền bù giải phóng mặt bằng</h2>
+      <p>Đơn giá đền bù đất = <b>Giá đất theo bảng giá UBND Tỉnh/TP × Hệ số K</b> (K do UBND Thành phố quyết định riêng cho từng dự án). Công trình trên đất tính theo cấp phép, hoàn công và năm xây.</p>
+    </div>
+    <div class="tool-card">
+
+      <h3 class="sub-h gold-solid" style="margin-top:0">① Đất bị thu hồi</h3>
+      <div class="tool-grid">
+        <div><label for="gArea">Diện tích thu hồi (m²)</label><input type="number" id="gArea" value="100" min="0" step="1"></div>
+        <div>
+          <label for="gPrice">Giá đất bảng giá UBND (triệu/m²)</label>
+          <input type="number" id="gPrice" value="12" min="0" step="0.1">
+          <div class="hint">Theo năm ban hành quyết định, đúng vị trí (khu vực 1/2/3)</div>
+        </div>
+        <div>
+          <label for="gK">Hệ số K theo quyết định UBND TP</label>
+          <input type="number" id="gK" value="2.5" min="0" step="0.1">
+          <div class="hint">Phải có trong quyết định phê duyệt của dự án</div>
+        </div>
+      </div>
+
+      <h3 class="sub-h gold-solid">② Công trình trên đất</h3>
+      <div class="tool-grid">
+        <div>
+          <label for="gFloorArea">Tổng diện tích sàn (m²)</label>
+          <input type="number" id="gFloorArea" value="150" min="0" step="1">
+          <div class="hint">Cộng tất cả các tầng</div>
+        </div>
+        <div>
+          <label for="gBuildPrice">Đơn giá xây mới (triệu/m² sàn)</label>
+          <input type="number" id="gBuildPrice" value="6.5" min="0" step="0.1">
+          <div class="hint">Theo suất vốn đầu tư UBND ban hành</div>
+        </div>
+        <div>
+          <label for="gYear">Năm xây dựng</label>
+          <input type="number" id="gYear" value="2010" min="1950" max="2030" step="1">
+          <div class="hint">Khấu hao ~2%/năm, sàn tối thiểu 30%</div>
+        </div>
+        <div>
+          <label for="gLegal">Tình trạng pháp lý công trình</label>
+          <select id="gLegal">
+            <option value="1">Có phép + hoàn công vào sổ (100%)</option>
+            <option value="0.8">Có phép, chưa hoàn công (~80%)</option>
+            <option value="0.6">Không phép, xây trước thông báo thu hồi (~60%)</option>
+            <option value="0">Không phép, xây sau thông báo thu hồi (0%)</option>
+          </select>
+          <div class="hint">Tỷ lệ thực tế theo phương án được duyệt</div>
+        </div>
+      </div>
+
+      <h3 class="sub-h gold-solid">③ Hỗ trợ tái định cư &amp; tạm cư</h3>
+      <div class="tool-grid">
+        <div><label for="gPeople">Số nhân khẩu hợp lệ</label><input type="number" id="gPeople" value="4" min="0" step="1"></div>
+        <div><label for="gTamCuMonth">Hỗ trợ tạm cư (triệu/người/tháng)</label><input type="number" id="gTamCuMonth" value="1.5" min="0" step="0.1"></div>
+        <div><label for="gTamCuTime">Thời gian tạm cư (tháng)</label><input type="number" id="gTamCuTime" value="6" min="0" step="1"></div>
+        <div><label for="gMove">Hỗ trợ di chuyển, dọn dỡ (triệu)</label><input type="number" id="gMove" value="10" min="0" step="1"></div>
+      </div>
+
+      <h3 class="sub-h gold-solid">④ Lãi chậm thanh toán (nếu có)</h3>
+      <div class="tool-grid">
+        <div><label for="gLateMonths">Số tháng chậm thanh toán</label><input type="number" id="gLateMonths" value="0" min="0" step="1"></div>
+        <div><label for="gLateRate">Lãi suất chậm trả (%/năm)</label><input type="number" id="gLateRate" value="5" min="0" step="0.5"></div>
+      </div>
+
+      <button class="btn btn-primary" onclick="calcGPMB()">Ước tính đền bù</button>
+
+      <div id="gpmbResult" style="display:none">
+        <div class="result-box" style="margin-top:22px">
+          <div class="result-row"><span>Đơn giá đền bù đất (giá × K)</span><span class="v" id="gUnit"></span></div>
+          <div class="result-row"><span>1. Bồi thường đất</span><span class="v" id="gLand"></span></div>
+          <div class="result-row"><span>2. Bồi thường công trình <small id="gBuildNote"></small></span><span class="v" id="gBuild"></span></div>
+          <div class="result-row"><span>3. Hỗ trợ tạm cư</span><span class="v" id="gTamCu"></span></div>
+          <div class="result-row"><span>4. Hỗ trợ di chuyển, dọn dỡ</span><span class="v" id="gMoveOut"></span></div>
+          <div class="result-row"><span>5. Lãi chậm thanh toán</span><span class="v" id="gLate"></span></div>
+          <div class="result-row total"><span>TỔNG ƯỚC TÍNH</span><span class="v" id="gTotal"></span></div>
+        </div>
+      </div>
+
+      <p class="note">⚠️ Đây là <b>ước tính tham khảo</b>. Con số chính thức chỉ có trong <b>Quyết định phê duyệt phương án bồi thường</b> của UBND (ví dụ QĐ 547/QĐ-UBND — Vành đai 2,5; QĐ 256/QĐ-UBND — Vành đai 1). Mang quyết định gốc + sổ đỏ + ảnh công trình đến quán, chuyên gia tính chính xác từng mục — miễn phí.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     AI CHAT GIA AN — một chức năng của website
+     Xử lý hội thoại nằm trong js/gia-an.js
+     ============================================================ -->
+<section id="gia-an">
+  <div class="container">
+    <div class="section-head">
+      <div class="rule"></div>
+      <span class="tag gold-solid">Chức năng AI Chat</span>
+      <h2>Hỏi đáp cùng Gia An — trợ lý tư vấn của Cafe Quy Hoạch</h2>
+      <p>Gia An là chức năng trò chuyện tự động của website, lắng nghe câu chuyện của bạn và giải đáp thấu đáo ngay vấn đề bạn đang gặp. Khi thấy bạn thật sự cần người đồng hành, Gia An mới xin số điện thoại để chuyên gia gọi lại — chứ không hỏi vội. Gia An <b>không bịa số liệu</b>: điều gì cần hồ sơ gốc mới trả lời chính xác được, Gia An nói thẳng.</p>
+    </div>
+
+    <div class="gia-an-wrap">
+      <div class="ga-head">
+        <div class="ga-avatar">GA</div>
+        <div>
+          <b>Gia An</b>
+          <span>Quy hoạch · Pháp lý · GPMB · Xây dựng</span>
+        </div>
+        <div class="ga-status">Trực tuyến</div>
+      </div>
+
+      <!-- Khung hiển thị tin nhắn -->
+      <div class="ga-messages" id="gaMessages" aria-live="polite"></div>
+
+      <!-- Nút gợi ý chủ đề nhanh -->
+      <div class="ga-actions">
+        <button onclick="quickAsk('Tôi muốn kiểm tra xem thửa đất của tôi có dính quy hoạch không')">🗺️ Check quy hoạch</button>
+        <button onclick="quickAsk('Tôi cần tư vấn luật sư về vấn đề đất đai')">⚖️ Tư vấn luật sư</button>
+        <button onclick="quickAsk('Tôi muốn công chứng và sang tên sổ đỏ')">📜 Sang tên sổ đỏ</button>
+        <button onclick="quickAsk('Tôi muốn được kết nối mua bán nhà đất')">🤝 Kết nối mua bán</button>
+        <button onclick="quickAsk('Nhà tôi nằm trong diện giải phóng mặt bằng, tôi muốn ước tính tiền đền bù')">📐 Đền bù GPMB</button>
+        <button onclick="quickAsk('Tôi muốn sửa chữa, cải tạo nhà')">🛠️ Sửa nhà</button>
+      </div>
+
+      <!-- Ô nhập tin nhắn -->
+      <div class="ga-input">
+        <textarea id="gaInput" placeholder="Nhập câu hỏi của bạn... (Enter để gửi)" aria-label="Nhập tin nhắn cho Gia An"></textarea>
+        <button id="gaSend" onclick="sendMsg()">Gửi</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LIÊN HỆ
+     ============================================================ -->
+<section id="lien-he" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <div class="rule"></div>
+      <span class="tag gold-solid">Liên hệ</span>
+      <h2>Ghé quán, hoặc nhắn Zalo — đều được</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <p>HOTLINE / ZALO CHÍNH</p>
+        <div class="big"><a href="https://zalo.me/0962145185" class="gold-text" target="_blank" rel="noopener">0962 145 185</a></div>
+        <p>Tiếp nhận khách hàng &amp; báo cáo tư vấn</p>
+      </div>
+      <div class="contact-card">
+        <p>HOTLINE 2</p>
+        <div class="big"><a href="tel:0988252979" class="gold-text">0988 252 979</a></div>
+        <p>Hỗ trợ tư vấn pháp lý</p>
+      </div>
+      <div class="contact-card">
+        <p>CHI PHÍ TƯ VẤN</p>
+        <div class="big gold-text">Miễn phí 100%</div>
+        <p>Minh Bạch · Uy Tín · An Tâm</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHÂN TRANG
+     ============================================================ -->
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <b class="gold-text">CAFE QUY HOẠCH</b><br>
+      Quy hoạch · Pháp lý · GPMB · Thiết kế xây dựng
+    </div>
+    <div class="motto gold-text">Minh Bạch · Uy Tín · An Tâm</div>
+    <div>
+      Zalo: 0962 145 185 · 0988 252 979<br>
+      <button class="admin-link" onclick="openAdmin()">Bảng điều khiển (chủ quán)</button>
+    </div>
+  </div>
+</footer>
+
+<!-- Nút chat nổi góc phải dưới -->
+<button id="chatFab" onclick="openGiaAn()" aria-label="Mở AI Chat Gia An">💬 AI Chat Gia An</button>
+
+<!-- ============================================================
+     HỘP BÁO CÁO CUỐI NGÀY — chỉ chủ quán mở được bằng mã PIN
+     ============================================================ -->
+<div class="modal-back" id="modalBack">
+  <div class="modal">
+    <h3 class="gold-text" id="modalTitle">Báo cáo cuối ngày</h3>
+    <div class="sub" id="modalSub"></div>
+    <div class="stat-row">
+      <div class="stat"><div class="num gold-text" id="stTotal">0</div><div class="lbl">Khách chat hôm nay</div></div>
+      <div class="stat"><div class="num gold-text" id="stDeep">0</div><div class="lbl">Quan tâm sâu</div></div>
+      <div class="stat"><div class="num gold-text" id="stPhone">0</div><div class="lbl">Để lại SĐT</div></div>
+    </div>
+    <div class="report-text" id="reportText">Đang tổng hợp…</div>
+    <div class="modal-btns">
+      <button class="mb-primary" onclick="sendReportZalo()">Sao chép &amp; mở Zalo</button>
+      <button class="mb-ghost" onclick="rebuildReport()">Soạn lại</button>
+      <button class="mb-close" onclick="closeAdmin()">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MÃ NGUỒN JAVASCRIPT
+     Thứ tự nạp quan trọng: config trước, các file khác sau.
+     ============================================================ -->
+<script src="js/config.js"></script>
+<script src="js/tools.js"></script>
+<script src="js/gia-an.js"></script>
+<script src="js/report.js"></script>
+
+</body>
+</html>

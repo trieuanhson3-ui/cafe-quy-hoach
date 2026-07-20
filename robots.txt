@@ -1,0 +1,3 @@
+# Cho phép Google và các công cụ tìm kiếm lập chỉ mục toàn bộ website
+User-agent: *
+Allow: /

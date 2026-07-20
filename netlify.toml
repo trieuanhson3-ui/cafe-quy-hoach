@@ -1,0 +1,38 @@
+# ============================================================
+# CẤU HÌNH TRIỂN KHAI NETLIFY — CAFE QUY HOẠCH
+# ------------------------------------------------------------
+# File này giúp Netlify biết cách đưa website lên mạng.
+# Bạn KHÔNG cần sửa gì trong file này.
+# ============================================================
+
+[build]
+  # Website là HTML thuần, không cần biên dịch
+  publish = "."
+  command = ""
+
+  # Thư mục chứa hàm AI (chỉ dùng khi bật AI thật — xem README)
+  functions = "netlify/functions"
+
+# --- Bộ nhớ đệm: giúp trang tải nhanh hơn cho khách quay lại ---
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# --- Bảo mật cơ bản ---
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

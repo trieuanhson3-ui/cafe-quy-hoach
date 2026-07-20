@@ -1,0 +1,26 @@
+# ============================================================
+# CÁC FILE KHÔNG ĐƯA LÊN GITHUB — CAFE QUY HOẠCH
+# ============================================================
+
+# Khóa bí mật (TUYỆT ĐỐI không đưa lên GitHub)
+.env
+.env.*
+*.key
+
+# Thư mục tạm của Netlify / Vercel
+.netlify/
+.vercel/
+
+# Gói cài đặt
+node_modules/
+
+# File rác của hệ điều hành
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# File tạm của trình soạn thảo
+*.swp
+*~
+.idea/
+.vscode/
